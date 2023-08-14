@@ -1,0 +1,174 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.click-img {
+    height: 220px !important;
+    width: 220px !important;
+}
+
+.click {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+
+}
+
+.touchThis {
+    color: rgb(8, 98, 8);
+    font-size: 3rem;
+    font-weight: bolder;
+}
+
+.arrowImg {
+    cursor: not-allowed;
+    height: 70px !important;
+}
+
+.animation1 {
+    float: left;
+    width: 50%;
+    transition-duration: 4s;
+    height: 100vh;
+    background-image: url('./images/pngtree-pakistan-independence-day-background-png-and-vector-png-image_6064973.png');
+}
+
+.animation2 {
+    transition-duration: 4s;
+    float: right;
+    width: 50%;
+    height: 100vh;
+    background-image: url('./images/pngtree-pakistan-independence-day-background-png-and-vector-png-image_6064973.png');
+}
+
+.left-side-images {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.left-side {
+    left: 0% !important;
+    position: fixed !important;
+
+    /* flex-direction: column; */
+
+}
+
+.left-side-images>img {
+    margin: 10px 15px 0px;
+    height: 30px;
+    width: 30px;
+}
+
+.card {
+    position: relative;
+    margin-left: 110px !important;
+    padding: 5px;
+    box-shadow: rgba(129, 210, 168, 0.25) 0px 54px 55px, rgba(19, 161, 40, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+    margin-top: 20px;
+}
+
+@media screen and (max-width: 653px) {
+    .card {
+        margin-left: unset !important;
+    }
+}
+
+@media screen and (max-width: 363px) {
+    .man-pic {
+        width: 133px !important;
+    }
+}
+
+.right-side {
+    right: 0%;
+    position: fixed;
+}
+
+.container {
+    display: flex;
+    justify-content: center !important;
+    align-items: center !important;
+    position: absolute;
+
+}
+
+.name {
+    font-family: arial black;
+    font-size: 20px;
+    background-image:
+        linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet, red);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rainbow-animation 200s linear infinite;
+}
+
+@keyframes rainbow-animation {
+    to {
+        background-position: 4500vh;
+    }
+
+}
+
+.happy-independence {
+    animation: pulse 3.5s infinite;
+}
+
+.maim-con {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    bottom: 0;
+}
+
+
+.name-inter {
+    background-color: yellow;
+    width: 50%;
+    padding: 4px;
+    border-radius: 7px;
+    border: 1px solid #029b2c;
+    outline: 1px solid #029b2c;
+
+}
+
+.button {
+    margin-left: 20px;
+    background-color: #029b2c;
+    padding: 6px 10%;
+    border-radius: 7px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.button:active {
+    opacity: 0.5;
+}
+
+/* @media screen and (max-width: 1021px) {
+    .card{
+        width: 355px;
+    }
+}
+@media screen and (max-width: 464px) {
+    .card{
+        width: 100% !important;
+        height: 100% !important;
+        margin: unset;
+        position: absolute !important;
+    }
+} */
