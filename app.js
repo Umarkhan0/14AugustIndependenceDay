@@ -1,12 +1,13 @@
+
 let button = document.querySelector(".click-img");
-button.addEventListener("click",()=>{
-   document.getElementById("box-hap").style.display = "none"
-   document.querySelector(".animation1").style.width = "0px";
-   document.querySelector(".animation2").style.width = "0px"
-   let wellcome = document.getElementById ("wellcom")
-   wellcome.style.display = "block"
-   setTimeout(()=>{
-wellcome.innerHTML = `
+button.addEventListener("click", () => {
+  document.getElementById("box-hap").style.display = "none"
+  document.querySelector(".animation1").style.width = "0px";
+  document.querySelector(".animation2").style.width = "0px"
+  let wellcome = document.getElementById("wellcom")
+  wellcome.style.display = "block"
+  setTimeout(() => {
+    wellcome.innerHTML = `
 <div class="container">
     <div class="card">
       <p class="name">Umar khan</p>
@@ -48,12 +49,72 @@ wellcome.innerHTML = `
   <!-- </div> -->
   <center>
   <div class="maim-con">
-    <input type="text" class="name-inter" placeholder="👉 Enter Your Name Here..">
-    <div class="button">
+    <input type="text" maxlength="10" class="name-inter" placeholder="👉 Enter Your Name Here..">
+    <div class="button" id="but-name">
       👉 Go
   </div>
   </div>
   </center>
 `
-   },2000)
+
+    let name = document.querySelector(".name");
+    console.log(window.location.host)
+    let wins = window.location.href
+    let findLast = wins.indexOf("=")
+    let fineInde = wins.indexOf("?");
+    fineInde++
+    let final = wins.slice(fineInde, findLast)
+    let findSpace = wins.indexOf("+");
+    let finalyRes = `${wins.slice(fineInde, findSpace)} ${wins.slice(findSpace + 1, findLast)}`
+    console.log(`${wins.slice(fineInde, findSpace)}`)
+    let inputs = wins.slice(fineInde, findSpace)
+    if (finalyRes == `${inputs} http://${window.location.host}/?${inputs}`) {
+      name.textContent = `${wins.slice(fineInde, findSpace)}`
+    } else {
+
+
+      name.textContent = finalyRes;
+    }
+
+
+
+    let buttonSet = document.getElementById("but-name");
+    let input = document.querySelector(".name-inter");
+    buttonSet && buttonSet.addEventListener('click', (event) => {
+      event.preventDefault();
+      let name = document.querySelector(".name");
+      var searchParams = new URLSearchParams(input.value.trim());
+      if (input.value.trim()) {
+
+        history.pushState({}, '', '?' + searchParams.toString())
+        input.value = ""
+        let name = document.querySelector(".name");
+        let wins = window.location.href
+        let findLast = wins.indexOf("=")
+        let fineInde = wins.indexOf("?");
+        fineInde++
+        let final = wins.slice(fineInde, findLast)
+        let findSpace = wins.indexOf("+");
+        let finalyRes = `${wins.slice(fineInde, findSpace)} ${wins.slice(findSpace + 1, findLast)}`
+        console.log(`${wins.slice(fineInde, findSpace)}`)
+        let inputs = wins.slice(fineInde, findSpace)
+        if (finalyRes == `${inputs} http://${window.location.host}/?${inputs}`) {
+          name.textContent = `${wins.slice(fineInde, findSpace)}`
+        } else {
+
+
+          name.textContent = finalyRes;
+        }
+        input.style.display = "none";
+        buttonSet.style.display = "none"
+
+      }
+      else {
+        input.style.border = "2px solid red"
+      }
+
+    });
+
+
+  }, 2000)
 })
