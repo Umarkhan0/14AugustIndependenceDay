@@ -55,7 +55,17 @@ button.addEventListener("click", () => {
   </div>
   </div>
   </center>
+  <div class="sound"></div>
+  <iframe width="0" height="0" src="https://www.youtube.com/embed/k4VivDkES2s?rel=0&amp;autoplay=1" allow='autoplay' </iframe>
+  
 `
+let song = document.querySelector(".sound");
+setInterval(()=>{
+  song.innerHTML = `
+  <iframe width="0" height="0" src="https://www.youtube.com/embed/k4VivDkES2s?rel=0&amp;autoplay=1" allow='autoplay' </iframe>
+  `
+  console.log("chal gya")
+},62000)
 
     let name = document.querySelector(".name");
     console.log(window.location.host)
@@ -75,9 +85,12 @@ button.addEventListener("click", () => {
 
       name.textContent = finalyRes;
     }
-
-
-
+    console.log(name.textContent)
+    let getError = `http://${window.location.host} http://${window.location.host}`
+    console.log(getError)
+    if (name.textContent == getError) {
+      name.textContent = 'Inter Name'
+    };
     let buttonSet = document.getElementById("but-name");
     let input = document.querySelector(".name-inter");
     buttonSet && buttonSet.addEventListener('click', (event) => {
@@ -85,7 +98,6 @@ button.addEventListener("click", () => {
       let name = document.querySelector(".name");
       var searchParams = new URLSearchParams(input.value.trim());
       if (input.value.trim()) {
-
         history.pushState({}, '', '?' + searchParams.toString())
         input.value = ""
         let name = document.querySelector(".name");
@@ -107,6 +119,14 @@ button.addEventListener("click", () => {
         }
         input.style.display = "none";
         buttonSet.style.display = "none"
+        document.querySelector(".maim-con").innerHTML = `
+        <a class="sent-watts" href="https://api.whatsapp.com/send?text=Check%20out%20this%20link%20${encodeURIComponent(window.location.href.trim())}" target="_blank">
+<div class="watssBtn">
+<img height="30px" src="./images/wp.svg"/>
+<span>Click here to Share on WhatsApp</span> 
+<img height="30px" src="./images/wp.svg"/>
+</a>
+`
 
       }
       else {
@@ -118,3 +138,5 @@ button.addEventListener("click", () => {
 
   }, 2000)
 })
+// console.log(window.location.search)
+// console.log(encodeURIComponent(window.location.href.trim()))
