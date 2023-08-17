@@ -89,7 +89,7 @@ setInterval(()=>{
     let getError = `http://${window.location.host} http://${window.location.host}`
     console.log(getError)
     if (name.textContent == getError) {
-      name.textContent = 'Inter Name'
+      name.textContent = 'Your Name'
     };
     let buttonSet = document.getElementById("but-name");
     let input = document.querySelector(".name-inter");
